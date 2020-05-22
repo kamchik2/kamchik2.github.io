@@ -29,7 +29,7 @@
 
 	// loader
 	var loader = function() {
-		setTimeout(function() { 
+		setTimeout(function() {
 			if($('#ftco-loader').length > 0) {
 				$('#ftco-loader').removeClass('show');
 			}
@@ -52,11 +52,11 @@
 			if ( $('#ftco-nav').is(':visible') ) {
 				$(this).removeClass('active');
 			} else {
-				$(this).addClass('active');	
+				$(this).addClass('active');
 			}
 
-			
-			
+
+
 		});
 
 	};
@@ -81,7 +81,7 @@
 	};
 
 	onePageClick();
-	
+
 
 	var carousel = function() {
 		$('.home-slider').owlCarousel({
@@ -143,19 +143,19 @@
 
 			if (st > 150) {
 				if ( !navbar.hasClass('scrolled') ) {
-					navbar.addClass('scrolled');	
+					navbar.addClass('scrolled');
 				}
-			} 
+			}
 			if (st < 150) {
 				if ( navbar.hasClass('scrolled') ) {
 					navbar.removeClass('scrolled sleep');
 				}
-			} 
+			}
 			if ( st > 350 ) {
 				if ( !navbar.hasClass('awake') ) {
-					navbar.addClass('awake');	
+					navbar.addClass('awake');
 				}
-				
+
 				if(sd.length > 0) {
 					sd.addClass('sleep');
 				}
@@ -173,10 +173,10 @@
 	};
 	scrollWindow();
 
-	
+
 
 	var counter = function() {
-		
+
 		$('#section-counter, .hero-wrap, .ftco-counter, .ftco-about').waypoint( function( direction ) {
 
 			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
@@ -193,7 +193,7 @@
 					  }, 7000
 					);
 				});
-				
+
 			}
 
 		} , { offset: '95%' } );
@@ -207,7 +207,7 @@
 		$('.ftco-animate').waypoint( function( direction ) {
 
 			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-				
+
 				i++;
 
 				$(this.element).addClass('item-animate');
@@ -229,9 +229,9 @@
 							el.removeClass('item-animate');
 						},  k * 50, 'easeInOutExpo' );
 					});
-					
+
 				}, 100);
-				
+
 			}
 
 		} , { offset: '95%' } );
@@ -273,13 +273,13 @@
   var goHere = function() {
 
 		$('.mouse-icon').on('click', function(event){
-			
+
 			event.preventDefault();
 
 			$('html,body').animate({
 				scrollTop: $('.goto-here').offset().top
 			}, 500, 'easeInOutExpo');
-			
+
 			return false;
 		});
 	};
@@ -342,7 +342,7 @@ window.onload = function() {
   // INJECT CSS
   var css = document.createElement("style");
   css.type = "text/css";
-  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid pink }";
   document.body.appendChild(css);
 };
 
@@ -366,7 +366,7 @@ window.onload = function() {
   var id = false;
   //variable for the selection of the anchors in the navbar
   var $navbara = $('#navi a');
-  
+
   $navbara.click(function(e){
     //prevent the page from refreshing
     e.preventDefault();
@@ -376,14 +376,14 @@ window.onload = function() {
 },500);
     hash($(this).attr('href'));
   });
-  
-  
-  
+
+
+
   //select all the anchors in the navbar one after another
   $navbara.each(function(){
    // and adds them in the sections variable
     sections.push($($(this).attr('href')));
-    
+
   })
   $(window).scroll(function(e){
     // scrollTop retains the value of the scroll top with the reference at the middle of the page
@@ -391,7 +391,7 @@ window.onload = function() {
     //cycle through the values in sections array
     for (var i in sections) {
       var section = sections[i];
-      //if scrollTop variable is bigger than the top offset of a section in the sections array then 
+      //if scrollTop variable is bigger than the top offset of a section in the sections array then
       if (scrollTop > section.offset().top){
         var scrolled_id = section.attr('id');
       }
@@ -399,7 +399,7 @@ window.onload = function() {
     if (scrolled_id !== id) {
       id = scrolled_id;
       $($navbara).removeClass('current');
-      $('#navi a[href="#' + id + '"]').addClass('current'); 
+      $('#navi a[href="#' + id + '"]').addClass('current');
     }
   })
 })(jQuery);
@@ -439,4 +439,3 @@ $(function() {
   }
 
 });
-
